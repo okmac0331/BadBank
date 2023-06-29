@@ -1,5 +1,37 @@
+/* .nav-bar {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home:hover {
+  background-color: lightgray;
+}
+.create-account:hover {
+  background-color: lightgray;
+}
+.login:hover {
+  background-color: lightgray;
+}
+.balance:hover {
+  background-color: lightgray;
+}
+.deposit:hover {
+  background-color: lightgray;
+}
+.withdraw:hover {
+  background-color: lightgray;
+}
+.all-data:hover {
+  background-color: lightgray;
+} */
+
 body {
-  background-image: url("../public/images/background2.jpg");
+  background-image: url("./../public/images/background2.jpg");
   background-size: cover;
   color: #253237;
   margin: 0;
@@ -34,11 +66,11 @@ code {
 }
 
 .navbar {
-  background-color: #f8f9fa;
+  background-color: #21262a;
   box-shadow: 0 3px 8px #25323762;
 }
 
-.nav-link:hover {
+.nav-link.nav-link:popover {
   color: #212529;
 }
 

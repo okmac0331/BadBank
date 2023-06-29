@@ -1,34 +1,35 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Layout from "./components/Layout";
+import React from "react";
 import Home from "./components/Home";
+import CreateAccount from "./components/CreateAccount";
+import Login from "./components/Login";
 import Deposit from "./components/Deposit";
 import Withdraw from "./components/Withdraw";
-import UserAccount from "./components/UserAccount";
-import AllData from "./components/AllData";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import AllData from "./components/Alldata";
+import  NavBar  from "./Navbar"
+import UserContext from "./userContext";
+import {  Routes,  Route, } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css"
+import './App.css'
 
-function App() {
+
+export default function Spa() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
-            <Route path="deposit" element={<Deposit />} />
-            <Route path="withdraw" element={<Withdraw />} />
-            <Route path="myAccount" element={<UserAccount />} />
-            <Route path="allData" element={<AllData />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+   
       <div>
-        <ToastContainer></ToastContainer>
+        <NavBar/>        
+        <UserContext.Provider value={{users:[{name:'Aas Mahmood',email:'legends.book@gmail.com',password:'secret80',balance:600}]}}>
+          <div className="container" style={{padding: "20px"}}>
+          <Routes>
+          <Route path="/" element={<Home />} />
+           <Route path="/CreateAccount/" element={<CreateAccount />} />
+           <Route path="/login/" element={<Login />} />
+           <Route path="/deposit/" element={<Deposit />} />
+           <Route path="/withdraw/" element={<Withdraw />} />
+           <Route path="/Alldata/" element={<AllData />} />
+          </Routes>
+          </div>
+        </UserContext.Provider>
       </div>
-    </>
+    
   );
 }
-
-export default App;
